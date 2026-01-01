@@ -1,0 +1,564 @@
+.main {
+  min-height: 100vh;
+  background: var(--background);
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 100px;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(168, 199, 250, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float1 8s ease-in-out infinite;
+}
+
+.gradientOrb2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(197, 168, 250, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float2 10s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-30px, 30px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -30px); }
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+}
+
+.heroLabel {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.heroTitle {
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+}
+
+.titleGradient {
+  background: linear-gradient(135deg, #a8c7fa 0%, #c5a8fa 50%, #faa8d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.heroCTA {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #a8c7fa 0%, #c5a8fa 100%);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(168, 199, 250, 0.3);
+}
+
+.btnArrow {
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.primaryBtn:hover .btnArrow {
+  transform: translateX(4px);
+}
+
+/* Stats Section */
+.statsSection {
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.statsTicker {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.statValue {
+  font-size: 48px;
+  font-weight: 300;
+  background: linear-gradient(135deg, #a8c7fa 0%, #c5a8fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Solutions Section */
+.solutionsSection {
+  padding: 120px 100px;
+}
+
+.solutionsHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionTitle {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.solutionsContainer {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solutionsTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.solutionTab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.tabIndicator {
+  width: 3px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.activeTab .tabIndicator {
+  background: var(--accent-color, #a8c7fa);
+  height: 32px;
+}
+
+.tabTitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.activeTab .tabTitle {
+  color: var(--text-primary);
+}
+
+.solutionContent {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.solutionVisual {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+.visualCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: var(--accent-color, #a8c7fa);
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(40px);
+}
+
+.visualRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--accent-color, #a8c7fa);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.visualDots {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.visualDot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-color, #a8c7fa);
+  border-radius: 50%;
+}
+
+.solutionText {
+  flex: 1;
+}
+
+.solutionTitle {
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.solutionDesc {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.solutionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.solutionLink:hover {
+  gap: 12px;
+}
+
+/* Capabilities Section */
+.capabilitiesSection {
+  padding: 120px 100px;
+  background: linear-gradient(180deg, transparent 0%, rgba(168, 199, 250, 0.03) 100%);
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.capabilityItem {
+  text-align: center;
+  padding: 48px 32px;
+}
+
+.capabilityIcon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+}
+
+.capabilityIcon span {
+  font-size: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.iconGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(168, 199, 250, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+.capabilityTitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.capabilityDesc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Platform Section */
+.platformSection {
+  padding: 120px 100px;
+}
+
+.platformHeader {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.platformFeatures {
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.featureTrack {
+  display: flex;
+  gap: 32px;
+  min-width: max-content;
+}
+
+.featureCard {
+  width: 300px;
+  padding: 48px 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.featureNumber {
+  font-size: 48px;
+  font-weight: 200;
+  background: linear-gradient(135deg, rgba(168, 199, 250, 0.5) 0%, rgba(197, 168, 250, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+}
+
+.featureCard h4 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.featureCard p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 120px 100px;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.ctaSubtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  background: linear-gradient(135deg, #a8c7fa 0%, #c5a8fa 100%);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(168, 199, 250, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .heroSection {
+    padding: 100px 40px;
+  }
+  
+  .solutionsSection,
+  .capabilitiesSection,
+  .platformSection,
+  .ctaSection {
+    padding: 80px 40px;
+  }
+  
+  .solutionsContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .solutionsTabs {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .solutionContent {
+    flex-direction: column;
+  }
+  
+  .capabilitiesGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .statsTicker {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 100px 24px;
+    min-height: auto;
+  }
+  
+  .solutionsSection,
+  .capabilitiesSection,
+  .platformSection,
+  .ctaSection {
+    padding: 60px 24px;
+  }
+  
+  .statValue {
+    font-size: 36px;
+  }
+  
+  .solutionVisual {
+    width: 200px;
+    height: 200px;
+  }
+}

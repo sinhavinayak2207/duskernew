@@ -1,0 +1,160 @@
+.heroSection {
+  padding: 120px 0 80px;
+  background: var(--background);
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.productIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.logoContainer {
+  margin-bottom: 8px;
+}
+
+.scaleLogo {
+  width: 68.5px;
+  height: auto;
+  opacity: 0.4;
+}
+
+.mainTitle {
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 600px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background-color: var(--button-primary-hover);
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btnPrimary:hover .arrow {
+  transform: translateX(4px);
+}
+
+.rightContent {
+  position: relative;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--card-bg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .iconWrapper {
+    margin: 0 auto;
+  }
+  
+  .textContent {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .subtitle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 100px 0 60px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .contentWrapper {
+    gap: 40px;
+  }
+}

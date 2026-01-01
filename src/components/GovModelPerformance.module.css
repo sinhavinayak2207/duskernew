@@ -1,0 +1,375 @@
+.section {
+  padding: 120px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Animated Background Orbs */
+.orbContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(100px);
+  will-change: transform;
+}
+
+.orb:nth-child(1) { top: 10%; left: 10%; }
+.orb:nth-child(2) { top: 50%; left: 50%; }
+.orb:nth-child(3) { top: 30%; right: 10%; }
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.label {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  font-family: var(--font-geist-mono);
+  background: linear-gradient(90deg, #7E9FFF, #FF69B4, #FFD700, #7E9FFF);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  text-wrap: balance;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #FF69B4, #7E9FFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #FF69B4, #7E9FFF);
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  text-wrap: balance;
+}
+
+/* Stats Ring */
+.statsRing {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+
+.statCard {
+  position: relative;
+  padding: 32px 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--stat-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.statCard:hover::before {
+  opacity: 1;
+}
+
+.statGlow {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.3;
+}
+
+.statValue {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--font-geist-mono);
+  position: relative;
+  z-index: 1;
+}
+
+/* Hexagonal Grid */
+.hexGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.hexCard {
+  position: relative;
+  padding: 40px 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hexCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hexCard.activeHex {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-8px);
+}
+
+.hexBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+.hexContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hexIcon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.hexTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  margin-bottom: 12px;
+}
+
+.hexDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+/* Particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Holographic Container */
+.holoContainer {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.holoRing,
+.holoRing2 {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed rgba(126, 159, 255, 0.3);
+  border-radius: 50%;
+}
+
+.holoRing2 {
+  inset: 30px;
+  border-color: rgba(255, 105, 180, 0.3);
+}
+
+.holoImage {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 0 60px rgba(126, 159, 255, 0.3),
+    0 0 120px rgba(255, 105, 180, 0.2),
+    inset 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Progress Bar */
+.progressBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+
+.progressDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.progressLine {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+  .hexGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .holoContainer {
+    width: 350px;
+    height: 350px;
+  }
+
+  .holoImage {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .statsRing {
+    gap: 16px;
+  }
+
+  .statCard {
+    padding: 24px 28px;
+  }
+
+  .statValue {
+    font-size: 36px;
+  }
+
+  .hexCard {
+    padding: 32px 24px;
+  }
+
+  .hexIcon {
+    font-size: 36px;
+  }
+
+  .holoContainer {
+    width: 280px;
+    height: 280px;
+  }
+
+  .holoImage {
+    width: 200px;
+    height: 200px;
+  }
+}

@@ -1,0 +1,270 @@
+.section {
+  padding: 120px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Constellation Background */
+.constellation {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background: rgba(126, 159, 255, 0.6);
+  border-radius: 50%;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-family: var(--font-geist-mono);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #7E9FFF 0%, #FF69B4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Expert Showcase */
+.expertShowcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* Central Display */
+.centralDisplay {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.displayGlow {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+}
+
+.displayRing {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border: 2px dashed;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.displayContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px;
+}
+
+.displayIcon {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.displayContent h3 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  font-family: var(--font-aeonik);
+}
+
+.displayContent p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Expert Selector */
+.expertSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.selectorItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.selectorItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.activeSelector {
+  border-color: var(--expert-color) !important;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.selectorGlow {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  filter: blur(30px);
+}
+
+.selectorIcon {
+  width: 48px;
+  height: 48px;
+  border: 2px solid;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.selectorTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 2;
+}
+
+.activeBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  font-family: var(--font-aeonik);
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 968px) {
+  .expertShowcase {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .centralDisplay {
+    max-width: 300px;
+  }
+
+  .displayIcon {
+    font-size: 48px;
+  }
+
+  .displayContent h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .expertShowcase {
+    margin-bottom: 60px;
+  }
+
+  .selectorItem {
+    padding: 16px 20px;
+  }
+
+  .selectorIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .stats {
+    gap: 40px;
+  }
+}

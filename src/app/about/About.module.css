@@ -1,0 +1,488 @@
+.main {
+  min-height: 100vh;
+  background: var(--background);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Background */
+.animatedBg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgGradient1 {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(168, 199, 250, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  top: -200px;
+  right: -200px;
+}
+
+.bgGradient2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(197, 168, 250, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  bottom: -200px;
+  left: -200px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 60px;
+}
+
+.floatingShapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(168, 199, 250, 0.2) 0%, rgba(197, 168, 250, 0.2) 100%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(2px);
+}
+
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.titleSmall {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.titleLarge {
+  font-size: clamp(60px, 10vw, 120px);
+  font-weight: 200;
+  background: linear-gradient(135deg, #a8c7fa 0%, #c5a8fa 50%, #faa8d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -4px;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Story Timeline */
+.storySection {
+  position: relative;
+  z-index: 1;
+  padding: 120px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+
+.timelinePath {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 400px;
+}
+
+.pathSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.storyContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.storyNode {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 300px;
+}
+
+.year {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(168, 199, 250, 0.1);
+  border-radius: 100px;
+  font-size: 12px;
+  color: #a8c7fa;
+  margin-bottom: 12px;
+}
+
+.storyNode h3 {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.storyNode p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Services Helix (Mirror of Values) */
+.servicesSection {
+  position: relative;
+  z-index: 1;
+  padding: 120px 60px;
+  min-height: 600px;
+}
+
+.sectionTitle {
+  font-size: clamp(36px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 80px;
+  letter-spacing: -1px;
+}
+
+.servicesHelix {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 60px;
+  flex-direction: row-reverse;
+}
+
+.serviceStrand {
+  position: relative;
+  width: 400px;
+  height: 500px;
+}
+
+.serviceNode {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.serviceNode:hover,
+.activeServiceNode {
+  background: rgba(168, 199, 250, 0.1);
+  border-color: rgba(168, 199, 250, 0.5);
+  transform: scale(1.2);
+}
+
+.serviceIcon {
+  font-size: 28px;
+}
+
+.serviceDetail {
+  flex: 1;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.serviceDetail h3 {
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.serviceDetail p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Values DNA Helix */
+.valuesSection {
+  position: relative;
+  z-index: 1;
+  padding: 120px 60px;
+  min-height: 600px;
+}
+
+.valuesHelix {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.helixStrand {
+  position: relative;
+  width: 400px;
+  height: 500px;
+}
+
+.valueNode {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.valueNode:hover,
+.activeNode {
+  background: rgba(168, 199, 250, 0.1);
+  border-color: rgba(168, 199, 250, 0.5);
+  transform: scale(1.2);
+}
+
+.valueIcon {
+  font-size: 28px;
+}
+
+.valueDetail {
+  flex: 1;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.valueDetail h3 {
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.valueDetail p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Team Constellation */
+.teamSection {
+  position: relative;
+  z-index: 1;
+  padding: 120px 60px;
+  min-height: 700px;
+}
+
+.teamConstellation {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.teamStar {
+  position: absolute;
+  width: 150px;
+  text-align: center;
+}
+
+.starGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(168, 199, 250, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.teamStar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(168, 199, 250, 0.3);
+  margin-bottom: 16px;
+}
+
+.memberInfo h3 {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.role {
+  font-size: 14px;
+  color: #a8c7fa;
+  margin-bottom: 8px;
+}
+
+.bio {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.constellationLines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Contact Portal */
+.contactSection {
+  position: relative;
+  z-index: 1;
+  padding: 120px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+}
+
+.contactPortal {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portalRing1,
+.portalRing2 {
+  position: absolute;
+  border: 2px solid rgba(168, 199, 250, 0.3);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+.portalRing1 {
+  inset: 0;
+}
+
+.portalRing2 {
+  inset: 40px;
+  animation-direction: reverse;
+  animation-duration: 15s;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.portalCore {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.portalCore h2 {
+  font-size: 36px;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.portalCore p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero,
+  .storySection,
+  .servicesSection,
+  .valuesSection,
+  .teamSection,
+  .contactSection {
+    padding: 80px 40px;
+  }
+  
+  .valuesHelix {
+    flex-direction: column;
+  }
+  
+  .helixStrand {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .storySection,
+  .servicesSection,
+  .valuesSection,
+  .teamSection,
+  .contactSection {
+    padding: 60px 24px;
+  }
+  
+  .titleLarge {
+    font-size: 60px;
+  }
+  
+  .servicesWheel {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .serviceOrb {
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+  }
+  
+  .statGrid {
+    grid-template-columns: 1fr;
+  }
+}

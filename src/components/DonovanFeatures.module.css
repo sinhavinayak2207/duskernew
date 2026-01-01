@@ -1,0 +1,436 @@
+.section {
+  padding: 120px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Data Streams Background */
+.dataStreams {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dataStream {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(180deg, transparent, rgba(126, 159, 255, 0.5), transparent);
+  border-radius: 2px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-family: var(--font-geist-mono);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  text-wrap: balance;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #7E9FFF 0%, #FF69B4 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Flow Container - Main horizontal layout */
+.flowContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+/* Input/Output Sections */
+.inputSection,
+.outputSection {
+  flex: 0 0 220px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sectionIcon {
+  font-size: 20px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  margin: 0;
+}
+
+/* Input/Output Cards */
+.inputCards,
+.outputCards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputCard,
+.outputCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.inputCard:hover,
+.outputCard:hover {
+  background: rgba(126, 159, 255, 0.1);
+  border-color: rgba(126, 159, 255, 0.3);
+}
+
+.inputIcon,
+.outputIcon {
+  font-size: 16px;
+}
+
+.inputLabel,
+.outputLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Pipeline Section */
+.pipelineSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 500px;
+  max-width: 700px;
+}
+
+/* Flow Arrows */
+.flowArrow {
+  display: flex;
+  align-items: center;
+  transform-origin: left;
+}
+
+.arrowLine {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(126, 159, 255, 0.5), rgba(255, 105, 180, 0.5));
+}
+
+.arrowHead {
+  font-size: 18px;
+  color: rgba(255, 105, 180, 0.7);
+  margin-left: -5px;
+}
+
+/* Stages Container */
+.stagesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  position: relative;
+  padding: 20px 0;
+}
+
+.stageConnections {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Stage Nodes */
+.stageNode {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.nodeGlow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: blur(15px);
+}
+
+.nodeIcon {
+  font-size: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.nodeRing {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px dashed;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.activeStage .nodeRing {
+  opacity: 1;
+}
+
+.nodeLabel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  font-family: var(--font-geist-mono);
+}
+
+/* Stage Info - appears below active node */
+.stageInfo {
+  position: absolute;
+  top: calc(100% + 35px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  padding: 12px;
+  background: rgba(10, 10, 15, 0.95);
+  border: 1px solid;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.stageInfo p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+}
+
+/* AI Terminal */
+.typingArea {
+  margin-bottom: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(126, 159, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminalDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminalTitle {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 8px;
+  font-family: var(--font-geist-mono);
+}
+
+.terminalContent {
+  padding: 12px;
+  min-height: 120px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.typingText {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-family: var(--font-geist-mono);
+}
+
+.promptText {
+  color: #7E9FFF;
+}
+
+.responseText {
+  color: #6BCB77;
+  font-weight: 500;
+}
+
+.cursor {
+  color: #7E9FFF;
+  font-weight: 400;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Stage Selector */
+.stageSelector {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.selectorBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.selectorBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.activeBtn {
+  color: var(--text-primary);
+  border-color: var(--btn-color);
+}
+
+.btnIcon {
+  font-size: 16px;
+}
+
+.btnText {
+  font-family: var(--font-geist-mono);
+}
+
+.btnIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+@media (max-width: 1200px) {
+  .flowContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pipelineSection {
+    min-width: 100%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .flowArrow {
+    transform: rotate(90deg);
+  }
+
+  .stagesContainer {
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .inputSection,
+  .outputSection {
+    flex: 0 0 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .stageSelector {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .selectorBtn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .stagesContainer {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .stageConnections {
+    display: none;
+  }
+}

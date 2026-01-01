@@ -1,0 +1,206 @@
+/* AnimatedProductCards.module.css - Animated, interactive product cards for Dusker homepage */
+.cardsSection {
+  padding: 6rem 2rem 5rem;
+  background: linear-gradient(180deg, rgba(249, 250, 251, 0) 0%, rgba(249, 250, 251, 0.8) 100%);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.sectionTitle {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #4f46e5 0%, #8b5cf6 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+}
+
+.sectionSubtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.card {
+  background: linear-gradient(120deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  padding: 2.5rem 2rem 2rem;
+  text-align: left;
+  color: #111827;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.22,1,.36,1);
+  overflow: visible;
+  border: 1px solid rgba(var(--card-color, 79, 70, 229), 0.1);
+  backdrop-filter: blur(8px);
+  height: 100%;
+  isolation: isolate;
+}
+.card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 8px 16px rgba(var(--card-color, 79, 70, 229), 0.1);
+  border: 1px solid rgba(var(--card-color, 79, 70, 229), 0.2);
+  z-index: 2;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(120deg, transparent, rgba(var(--card-color, 79, 70, 229), 0.3), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardBadge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: var(--card-color, #4f46e5);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 0.025em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 3;
+}
+.iconWrap {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconWrap {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  transform: scale(1.02);
+}
+
+.cardIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(.22,1,.36,1);
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.08);
+}
+
+.iconWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(var(--card-color, 79, 70, 229), 0.2) 0%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.card:hover .iconWrap::after {
+  opacity: 0.5;
+}
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #111827 0%, var(--card-color, #4f46e5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.learnMore {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--card-color, #4f46e5);
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.card:hover .learnMore {
+  opacity: 1;
+}
+
+.cardArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--card-color, #4f46e5);
+  opacity: 0.8;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.card:hover .cardArrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
+  .cardsGrid {
+    gap: 1.2rem;
+  }
+  .card {
+    padding: 1.1rem 0.7rem 1.3rem 0.7rem;
+  }
+}

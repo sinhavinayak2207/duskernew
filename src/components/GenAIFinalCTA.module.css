@@ -1,0 +1,100 @@
+.section {
+  padding: 110px 0 140px;
+  background: var(--background);
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  font-size: clamp(48px, 7vw, 89px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.89px;
+  margin: 0;
+}
+
+.titleGray {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.titleHighlight {
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.titleHighlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: linear-gradient(90deg, rgba(126, 159, 255, 0.3), rgba(255, 105, 180, 0.3));
+  z-index: -1;
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.ctaButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ctaButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0 100px;
+  }
+  
+  .content {
+    gap: 32px;
+  }
+  
+  .titleHighlight::after {
+    height: 8px;
+    bottom: 4px;
+  }
+}

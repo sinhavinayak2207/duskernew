@@ -1,0 +1,144 @@
+.section {
+  padding: 120px 0 80px;
+  background: transparent;
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.categorySelector {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.introText {
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.categoryButton {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.categoryButton:hover {
+  color: var(--text-primary);
+}
+
+.categoryButton.active {
+  color: var(--text-primary);
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.categoryButton:hover .underline,
+.categoryButton.active .underline {
+  opacity: 1;
+  background: var(--text-primary);
+}
+
+.logosContainer {
+  position: relative;
+  min-height: 200px;
+}
+
+.logosGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(24px, 4vw, 48px);
+  justify-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.logosGrid.activeGrid {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.logoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  transition: transform 0.3s ease;
+}
+
+.logoCard:hover {
+  transform: translateY(-4px);
+}
+
+.logoIcon {
+  font-size: clamp(40px, 6vw, 56px);
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.logoCard:hover .logoIcon {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.logoName {
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0 60px;
+  }
+
+  .logosGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .categorySelector {
+    margin-bottom: 40px;
+  }
+
+  .introText {
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .logosGrid {
+    grid-template-columns: 1fr;
+  }
+}

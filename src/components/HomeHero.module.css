@@ -1,0 +1,335 @@
+/* HomeHero.module.css - Parallax, animated hero section for Dusker homepage */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #f8f9ff 0%, #eef4ff 100%);
+  overflow: hidden;
+  padding: 6rem 2rem;
+}
+.backgroundShapes {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.circle1 {
+  position: absolute;
+  top: 10%; left: 8%;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, #7e9fff 0%, #f7f7fa 100%);
+  border-radius: 50%;
+  opacity: 0.22;
+  animation: float1 8s ease-in-out infinite alternate;
+}
+.circle2 {
+  position: absolute;
+  bottom: 10%; right: 12%;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, #fbc2eb 0%, #f7f7fa 100%);
+  border-radius: 50%;
+  opacity: 0.18;
+  animation: float2 12s ease-in-out infinite alternate;
+}
+.circle3 {
+  position: absolute;
+  top: 40%; right: 30%;
+  width: 140px; height: 140px;
+  background: radial-gradient(circle, #eaf0ff 0%, #7e9fff 100%);
+  border-radius: 50%;
+  opacity: 0.13;
+  animation: float3 10s ease-in-out infinite alternate;
+}
+@keyframes float1 {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-30px) scale(1.06); }
+}
+@keyframes float2 {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(35px) scale(1.08); }
+}
+@keyframes float3 {
+  0% { transform: translateX(0) scale(1); }
+  100% { transform: translateX(-24px) scale(1.04); }
+}
+.heroContainer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 2rem;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  max-width: 600px;
+  padding: 2rem 0;
+  flex: 1;
+}
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #232344;
+  margin-bottom: 1.2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.gradientText {
+  background: linear-gradient(90deg, #7c3aed 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.heroSubtitle {
+  font-size: 1.45rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  max-width: 500px;
+}
+.trustBadges {
+  margin-bottom: 2rem;
+}
+
+.trustedBy {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.badgeContainer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.companyBadge {
+  opacity: 0.7;
+  filter: grayscale(1);
+  transition: all 0.3s ease;
+}
+
+.companyBadge:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.ctaRow {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+.ctaBtnPrimary {
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ctaBtnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+}
+
+.ctaBtnPrimary svg {
+  transition: transform 0.3s ease;
+}
+
+.ctaBtnPrimary:hover svg {
+  transform: translateX(4px);
+}
+
+.ctaBtnSecondary {
+  background: transparent;
+  color: #4f46e5;
+  font-weight: 600;
+  padding: 0.95rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1.5px solid rgba(79, 70, 229, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ctaBtnSecondary:hover {
+  background: rgba(79, 70, 229, 0.05);
+  transform: translateY(-3px);
+  border-color: #4f46e5;
+}
+
+.ctaBtnSecondary svg {
+  transition: transform 0.3s ease;
+}
+
+.ctaBtnSecondary:hover svg {
+  transform: scale(1.1);
+}
+
+.heroImageContainer {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImageWrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+}
+
+.heroImageWrapper:hover .heroImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(79, 70, 229, 0.2) 0%, rgba(124, 58, 237, 0.1) 100%);
+  pointer-events: none;
+}
+
+.statsBadge {
+  position: absolute;
+  bottom: -20px;
+  right: 30px;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.1);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+@media (max-width: 1100px) {
+  .heroContainer {
+    flex-direction: column;
+  }
+  
+  .heroContent {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .heroSubtitle {
+    margin: 0 auto 2rem auto;
+  }
+  
+  .trustBadges {
+    justify-content: center;
+  }
+  
+  .badgeContainer {
+    justify-content: center;
+  }
+  
+  .ctaRow {
+    justify-content: center;
+  }
+  
+  .heroImageContainer {
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 5rem 1.5rem 3rem 1.5rem;
+  }
+  
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+  
+  .ctaRow {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .ctaBtnPrimary, .ctaBtnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .badgeContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .statsBadge {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: -20px;
+    z-index: 2;
+  }
+}

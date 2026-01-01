@@ -1,0 +1,66 @@
+.partnersSection {
+  width: 100%;
+  text-align: center;
+  padding: 80px 100px;
+  background: var(--background);
+}
+
+.partnersText {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  color: var(--text-secondary);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.highlightBox {
+  background-color: var(--highlight-bg);
+  color: var(--highlight-text);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.partnersLogos {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.logoItem {
+  font-size: 28px;
+  font-weight: 600;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.logoItem:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .partnersSection {
+    padding: 60px 40px;
+  }
+  
+  .partnersLogos {
+    gap: 40px;
+  }
+  
+  .logoItem {
+    font-size: 24px;
+  }
+}

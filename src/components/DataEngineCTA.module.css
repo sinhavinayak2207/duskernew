@@ -1,0 +1,119 @@
+.ctaSection {
+  padding: 110px 0 132px;
+  background: transparent;
+  position: relative;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(40px, 6vw, 89px);
+  font-weight: 300;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: -0.89px;
+  margin: 0;
+}
+
+.titleMuted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.titleHighlight {
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.titleHighlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700, #FF69B4);
+  border-radius: 2px;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btnPrimary {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.btnPrimary:hover {
+  background-color: var(--button-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: #F4F0FF;
+  border: none;
+}
+
+.btnSecondary:hover {
+  color: var(--text-primary);
+}
+
+.arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btnPrimary:hover .arrow,
+.btnSecondary:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: 80px 0 100px;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

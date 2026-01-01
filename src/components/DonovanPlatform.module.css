@@ -1,0 +1,317 @@
+.section {
+  padding: 120px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Constellation Background */
+.constellationBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(126, 159, 255, 0.6);
+  border-radius: 50%;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-family: var(--font-geist-mono);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  text-wrap: balance;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #7E9FFF 0%, #FF69B4 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  text-wrap: balance;
+}
+
+/* Orbital Container */
+.orbitalContainer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1;
+  margin: 0 auto 60px;
+}
+
+.orbitalRing1,
+.orbitalRing2,
+.orbitalRing3 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbitalRing1 {
+  width: 90%;
+  height: 90%;
+  border-color: rgba(126, 159, 255, 0.15);
+}
+
+.orbitalRing2 {
+  width: 65%;
+  height: 65%;
+  border-color: rgba(255, 105, 180, 0.15);
+}
+
+.orbitalRing3 {
+  width: 40%;
+  height: 40%;
+  border-color: rgba(255, 215, 0, 0.15);
+}
+
+/* Connection Lines SVG */
+.connectionsSvg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Orbital Nodes */
+.orbitalNode {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nodeGlow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+.nodeIcon {
+  font-size: 28px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.orbitalNode:hover .nodeIcon {
+  transform: scale(1.2);
+}
+
+.nodeRing {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px dashed;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.activeNode .nodeRing {
+  opacity: 1;
+}
+
+/* Side Info Panel - appears next to node */
+.sideInfoPanel {
+  position: absolute;
+  width: 220px;
+  padding: 16px;
+  background: rgba(10, 10, 15, 0.95);
+  border: 1px solid;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  z-index: 100;
+}
+
+.rightPanel {
+  left: calc(100% + 20px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.leftPanel {
+  right: calc(100% + 20px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sideInfoBadge {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sideInfoTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  font-family: var(--font-aeonik);
+}
+
+.sideInfoDesc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Center Hub */
+.centerHub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.hubPulse {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(126, 159, 255, 0.4), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hubCore {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(126, 159, 255, 0.2), rgba(255, 105, 180, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hubIcon {
+  font-size: 24px;
+}
+
+
+/* Mobile Features */
+.mobileFeatures {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileFeature {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.mobileIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.mobileContent {
+  flex: 1;
+}
+
+.mobileTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-family: var(--font-aeonik);
+}
+
+.mobileDesc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+.mobileLine {
+  position: absolute;
+  bottom: 0;
+  left: 64px;
+  right: 0;
+  height: 1px;
+  transform-origin: left;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .orbitalContainer {
+    display: none;
+  }
+
+  .mobileFeatures {
+    display: flex;
+  }
+}

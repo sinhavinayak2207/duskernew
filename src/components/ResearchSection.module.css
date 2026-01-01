@@ -1,0 +1,127 @@
+.researchSection {
+  width: 100%;
+  padding: 100px 100px;
+  background: var(--background);
+}
+
+.researchTitle {
+  font-size: clamp(40px, 4vw, 56px);
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.researchSubtitle {
+  font-size: clamp(16px, 1.5vw, 18px);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  animation: fadeIn 0.8s ease-out 0.1s both;
+}
+
+.researchCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.researchCard {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: fadeInUp 0.8s ease-out both;
+  position: relative;
+}
+
+.researchCard:hover {
+  background-color: var(--card-hover-bg);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.researchIcon {
+  font-size: 40px;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.researchContent {
+  flex: 1;
+}
+
+.researchLabel {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.researchCardTitle {
+  font-size: clamp(18px, 1.5vw, 20px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.researchArrow {
+  font-size: 24px;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+}
+
+.researchCard:hover .researchArrow {
+  color: var(--text-primary);
+  transform: translate(3px, -3px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .researchSection {
+    padding: 80px 40px;
+  }
+  
+  .researchCards {
+    grid-template-columns: 1fr;
+  }
+  
+  .researchCard {
+    padding: 24px;
+  }
+}

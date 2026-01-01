@@ -1,0 +1,206 @@
+.section {
+  padding: 120px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Background Pattern */
+.backgroundPattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bgDot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(126, 159, 255, 0.5);
+  border-radius: 50%;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-family: var(--font-geist-mono);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  text-wrap: balance;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #7E9FFF 0%, #FF69B4 50%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  text-wrap: balance;
+}
+
+/* Features Grid */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.featureCard {
+  position: relative;
+  padding: 40px 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.featureCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-8px);
+}
+
+.cardBorder {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--feature-color);
+  border-radius: 24px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Icon Container */
+.iconContainer {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.iconGlow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.3;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  color: var(--text-primary);
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Content */
+.featureTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  margin-bottom: 16px;
+}
+
+.featureDescription {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Hover Glow */
+.hoverGlow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* Particles */
+.particles {
+  position: absolute;
+  top: 56px;
+  left: 60px;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .featureCard {
+    padding: 32px 24px;
+  }
+
+  .featureTitle {
+    font-size: 20px;
+  }
+}

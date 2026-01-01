@@ -1,0 +1,64 @@
+.enterpriseSection {
+  width: 100%;
+  text-align: center;
+  padding: 100px 100px;
+  background: var(--background);
+}
+
+.sectionLabel {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.sectionTitle {
+  font-size: clamp(40px, 4vw, 56px);
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+  animation: fadeIn 0.8s ease-out 0.1s both;
+}
+
+.sectionSubtitle {
+  font-size: clamp(16px, 1.5vw, 18px);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.btnCta {
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+.btnCta:hover {
+  background-color: var(--button-primary-hover);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .enterpriseSection {
+    padding: 80px 40px;
+  }
+}

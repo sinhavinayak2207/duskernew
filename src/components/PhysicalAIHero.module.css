@@ -1,0 +1,212 @@
+.section {
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  min-height: 600px;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 10;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  text-wrap: balance;
+}
+
+.subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+  text-wrap: balance;
+}
+
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 16px;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(4px);
+}
+
+.rightContent {
+  position: relative;
+  height: 100%;
+  min-height: 600px;
+}
+
+.canvasWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.animatedScene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(126, 159, 255, 0.1), transparent 70%);
+}
+
+.floatingOrb {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.6), rgba(126, 159, 255, 0.4));
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.robotArm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
+.armSegment1 {
+  position: absolute;
+  width: 120px;
+  height: 12px;
+  background: linear-gradient(90deg, #7E9FFF, #FF69B4);
+  border-radius: 6px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  transform-origin: left center;
+  box-shadow: 0 0 20px rgba(126, 159, 255, 0.5);
+}
+
+.armSegment2 {
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  background: linear-gradient(90deg, #FF69B4, #FFD700);
+  border-radius: 5px;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: left center;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
+.armJoint {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle, #fff, #7E9FFF);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  z-index: 10;
+}
+
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .rightContent {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 100px 0 60px;
+  }
+
+  .rightContent {
+    min-height: 300px;
+  }
+
+  .robotArm {
+    width: 150px;
+    height: 150px;
+  }
+
+  .armSegment1 {
+    width: 90px;
+    height: 10px;
+  }
+
+  .armSegment2 {
+    width: 75px;
+    height: 8px;
+  }
+}

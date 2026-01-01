@@ -1,0 +1,209 @@
+.annotationsSection {
+  padding: 100px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  text-align: center;
+  max-width: 768px;
+  margin: 0 auto 80px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+/* Bento Grid Layout */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(280px, auto);
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 280px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(126, 159, 255, 0.4);
+  box-shadow: 0 30px 80px rgba(126, 159, 255, 0.25);
+}
+
+.cardActive {
+  border-color: rgba(126, 159, 255, 0.5) !important;
+  box-shadow: 0 40px 100px rgba(126, 159, 255, 0.3) !important;
+}
+
+/* Animated Background */
+.cardBackground {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Icon Wrapper */
+.cardIconWrapper {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 24px;
+}
+
+.cardIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  color: var(--text-primary);
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .cardIcon {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(126, 159, 255, 0.3);
+  box-shadow: 0 12px 48px rgba(126, 159, 255, 0.3);
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+  line-height: 1.3;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  overflow: hidden;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(126, 159, 255, 0.2);
+  transform: translateX(8px);
+}
+
+.featureIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.featureName {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* Hover Border Effect */
+.cardBorder {
+  position: absolute;
+  inset: -2px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #FFD700, #FF69B4, #7E9FFF);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .bentoGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(260px, auto);
+  }
+  .card {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(280px, auto);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .annotationsSection {
+    padding: 80px 0;
+  }
+  .header {
+    margin-bottom: 60px;
+  }
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 16px;
+  }
+  .card {
+    padding: 32px 24px;
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+  .cardIcon {
+    width: 56px;
+    height: 56px;
+  }
+  .cardTitle {
+    font-size: 20px;
+  }
+}

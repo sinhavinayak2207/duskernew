@@ -1,0 +1,22 @@
+.themeToggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.themeToggle:hover {
+  border-color: var(--border-hover);
+  background: var(--card-hover-bg);
+  transform: translateY(-2px);
+}
+
+.themeToggle svg {
+  display: block;
+}

@@ -1,0 +1,304 @@
+.section {
+  padding: 120px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.backgroundBlur {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: url('/static/images/2023/features-section-bg.png') center/cover no-repeat;
+  filter: blur(60px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  text-wrap: balance;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  text-wrap: balance;
+}
+
+/* Phases Grid */
+.phasesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.phaseCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.phaseCard:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-8px);
+}
+
+.phaseCard.active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Media Container */
+.mediaContainer {
+  position: relative;
+  aspect-ratio: 3/2;
+}
+
+.mediaWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.phaseImage {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.phaseCard:hover .phaseImage {
+  transform: scale(1.05);
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.playButton {
+  width: 80px;
+  height: 80px;
+  background: rgba(132, 117, 213, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.playButton:hover {
+  background: rgba(132, 117, 213, 1);
+  transform: scale(1.1);
+}
+
+.playButton svg {
+  margin-left: 4px;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 50%);
+  pointer-events: none;
+}
+
+.animatedBorder {
+  position: absolute;
+  inset: 0;
+  border: 2px solid;
+  border-radius: 16px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Phase Content */
+.phaseContent {
+  padding: 32px 24px;
+  position: relative;
+}
+
+.phaseNumber {
+  position: absolute;
+  top: -40px;
+  left: 24px;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-geist-mono);
+  z-index: 20;
+}
+
+.phaseTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  margin-bottom: 12px;
+  padding-left: 44px;
+}
+
+.phaseDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+.glowEffect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timelineTrack {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+  border-radius: 1px;
+}
+
+.timelineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #7E9FFF, #FF69B4, #FFD700);
+  border-radius: 1px;
+}
+
+.timelineDots {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+.timelineDot {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timelineDot.activeDot {
+  background: var(--dot-color);
+  border-color: var(--dot-color);
+  box-shadow: 0 0 20px var(--dot-color);
+}
+
+.dotNumber {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-geist-mono);
+}
+
+@media (max-width: 1024px) {
+  .phasesGrid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .phaseContent {
+    padding: 24px 20px;
+  }
+
+  .phaseTitle {
+    font-size: 20px;
+    padding-left: 36px;
+  }
+
+  .phaseNumber {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    top: -32px;
+    left: 20px;
+  }
+
+  .playButton {
+    width: 60px;
+    height: 60px;
+  }
+
+  .playButton svg {
+    width: 24px;
+    height: 24px;
+  }
+}

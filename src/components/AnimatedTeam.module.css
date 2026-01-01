@@ -1,0 +1,84 @@
+
+.teamSection {
+  padding: 5rem 0 3rem 0;
+  background: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.sectionTitle {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 3.2rem;
+  background: linear-gradient(90deg, #7e9fff 0%, #fbc2eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.teamCard {
+  background: linear-gradient(120deg, #f7f7fa 60%, #eaf0ff 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(126,159,255,0.07);
+  padding: 2.2rem 1.5rem 2.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.24s cubic-bezier(.77,0,.18,1), box-shadow 0.18s, background 0.18s;
+  overflow: visible;
+  border: 2px solid transparent;
+  opacity: 0.97;
+  animation: fadeInTeam 0.5s cubic-bezier(.77,0,.18,1);
+}
+@keyframes fadeInTeam {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 0.97; transform: translateY(0) scale(1); }
+}
+.avatar {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(126,159,255,0.09);
+  margin-bottom: 1.2rem;
+}
+.teamInfo {
+  text-align: center;
+}
+.teamName {
+  font-weight: 700;
+  color: #7e9fff;
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+.teamRole {
+  color: #5d2e8c;
+  font-size: 0.99rem;
+  opacity: 0.87;
+  margin-bottom: 0.7rem;
+}
+.teamBio {
+  color: #232344;
+  font-size: 1.02rem;
+  opacity: 0.88;
+  margin-bottom: 0.2rem;
+}
+@media (max-width: 700px) {
+  .teamGrid {
+    gap: 1.2rem;
+  }
+  .teamCard {
+    padding: 1.1rem 0.7rem 1.3rem 0.7rem;
+  }
+  .avatar {
+    width: 54px;
+    height: 54px;
+  }
+}

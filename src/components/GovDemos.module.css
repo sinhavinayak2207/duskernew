@@ -1,0 +1,235 @@
+.section {
+  padding: 120px 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-family: var(--font-geist-mono);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  text-wrap: balance;
+}
+
+.videoGallery {
+  position: relative;
+}
+
+.mainVideoWrapper {
+  margin-bottom: 48px;
+}
+
+.videoPlayer {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.videoContainer {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.thumbnailWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail {
+  object-fit: cover;
+}
+
+.playButton {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  background: rgba(132, 117, 213, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.playButton:hover {
+  background: rgba(132, 117, 213, 1);
+  transform: scale(1.1);
+}
+
+.playButton svg {
+  margin-left: 4px;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnailsWrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.thumbnailsScroll {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.thumbnailsScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnailCard {
+  flex-shrink: 0;
+  width: 348px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.5;
+}
+
+.thumbnailCard:hover {
+  opacity: 0.7;
+}
+
+.thumbnailCard.active {
+  opacity: 1;
+}
+
+.thumbnailImageWrapper {
+  position: relative;
+  aspect-ratio: 389 / 243;
+  border-radius: 11px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 16px;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 11px;
+}
+
+.thumbnailContent {
+  position: relative;
+}
+
+.thumbnailTitle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: var(--text-primary);
+  font-family: var(--font-aeonik);
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.thumbnailDescription {
+  font-size: 14px;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.mobileDots {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.dot.activeDot {
+  background: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .mainVideoWrapper {
+    margin-bottom: 40px;
+  }
+
+  .playButton {
+    width: 72px;
+    height: 72px;
+  }
+
+  .playButton svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .thumbnailCard {
+    width: 280px;
+  }
+
+  .thumbnailTitle {
+    font-size: 20px;
+  }
+
+  .mobileDots {
+    display: flex;
+  }
+}

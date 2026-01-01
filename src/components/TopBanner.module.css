@@ -1,0 +1,45 @@
+.topBanner {
+  width: 100%;
+  background-color: var(--card-bg);
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  animation: slideDown 0.5s ease-out;
+}
+
+.bannerLink {
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-left: 8px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.bannerLink:hover {
+  opacity: 0.7;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .topBanner {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+}
