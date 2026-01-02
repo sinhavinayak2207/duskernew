@@ -179,8 +179,8 @@ export default function BuildAISection() {
             and alignment.
           </p>
           <div className={styles.infoButtons}>
-            <button className={styles.btnDemo}>Book a Demo →</button>
-            <button className={styles.btnBuild}>Build AI →</button>
+            <a href="/demo" className={styles.btnDemo}>Book a Demo →</a>
+            <a href="/build-ai" className={styles.btnBuild}>Build AI →</a>
           </div>
         </div>
       </div>

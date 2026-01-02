@@ -31,10 +31,10 @@ export default function GenAIHero() {
             </h2>
             
             <div className={styles.ctaWrapper}>
-              <button className={styles.ctaButton}>
+              <a href="/demo" className={styles.ctaButton}>
                 Book a Demo
                 <span className={styles.arrow}>→</span>
-              </button>
+              </a>
             </div>
           </motion.div>
 

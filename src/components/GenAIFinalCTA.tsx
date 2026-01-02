@@ -20,10 +20,10 @@ export default function GenAIFinalCTA() {
             <span className={styles.titleHighlight}>starts here</span>
           </h3>
           <div className={styles.ctaWrapper}>
-            <button className={styles.ctaButton}>
+            <a href="/demo" className={styles.ctaButton}>
               Book a Demo
               <span className={styles.arrow}>→</span>
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

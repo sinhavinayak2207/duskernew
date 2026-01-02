@@ -19,10 +19,10 @@ export default function PhysicalAIHero() {
             <h1 className={styles.title}>Physical AI Data Engine</h1>
             <h2 className={styles.subtitle}>Powering the Next Generation of Robotics</h2>
             <div className={styles.ctaWrapper}>
-              <button className={styles.ctaButton}>
+              <a href="/demo" className={styles.ctaButton}>
                 Book a Demo
                 <span className={styles.arrow}>→</span>
-              </button>
+              </a>
             </div>
           </motion.div>
 

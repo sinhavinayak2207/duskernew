@@ -143,11 +143,11 @@ export default function AutoHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <button className={styles.ctaButton}>
+              <a href="/demo" className={styles.ctaButton}>
                 <span className={styles.ctaText}>Book a Demo</span>
                 <span className={styles.ctaArrow}>→</span>
                 <div className={styles.ctaGlow} />
-              </button>
+              </a>
             </motion.div>
 
             {/* Stats Row */}

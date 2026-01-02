@@ -54,10 +54,10 @@ export default function GovHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <button className={styles.ctaButton}>
+              <a href="/demo" className={styles.ctaButton}>
                 Book a Demo
                 <span className={styles.arrow}>→</span>
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 

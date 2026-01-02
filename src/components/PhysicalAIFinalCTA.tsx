@@ -20,12 +20,7 @@ export default function PhysicalAIFinalCTA() {
             <span className={styles.highlight}>starts here</span>
           </h3>
 
-          <div className={styles.ctaWrapper}>
-            <button className={styles.ctaButton}>
-              Book a Demo
-              <span className={styles.arrow}>→</span>
-            </button>
-          </div>
+          {/* Book a Demo button - Removed */}
         </motion.div>
 
         {/* Animated Background Elements */}

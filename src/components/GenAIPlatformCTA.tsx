@@ -97,35 +97,7 @@ export default function GenAIPlatformCTA() {
             from prototype to production-ready AI applications.
           </motion.p>
 
-          <motion.div
-            className={styles.ctaWrapper}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-          >
-            <motion.button
-              className={styles.ctaPrimary}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>Start Free Trial</span>
-              <motion.span
-                className={styles.ctaArrow}
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                →
-              </motion.span>
-            </motion.button>
-            <motion.button
-              className={styles.ctaSecondary}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Talk to Sales
-            </motion.button>
-          </motion.div>
+          {/* CTA Buttons - Removed */}
 
           {/* Trust Indicators */}
           <motion.div

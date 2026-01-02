@@ -11,7 +11,7 @@ export default function EnterpriseSection() {
       <p className={styles.sectionSubtitle}>
         Outcomes delivered with world-class data, models, agents, and deployment.
       </p>
-      <button className={styles.btnCta}>Book a Demo →</button>
+      <a href="/demo" className={styles.btnCta}>Book a Demo →</a>
     </section>
   );
 }

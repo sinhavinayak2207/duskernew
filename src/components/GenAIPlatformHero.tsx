@@ -205,19 +205,7 @@ export default function GenAIPlatformHero() {
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           />
           <div className={styles.aiCenter}>
-            <motion.span
-              animate={{ 
-                textShadow: [
-                  '0 0 20px rgba(126, 159, 255, 0.5)',
-                  '0 0 40px rgba(255, 105, 180, 0.5)',
-                  '0 0 20px rgba(255, 215, 0, 0.5)',
-                  '0 0 20px rgba(126, 159, 255, 0.5)'
-                ]
-              }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              🤖
-            </motion.span>
+            {/* AI visualization center - emoji removed */}
           </div>
         </motion.div>
       </div>
