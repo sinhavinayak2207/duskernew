@@ -8,7 +8,7 @@ export default function NewHero() {
     <section className={styles.heroSection}>
       <div className={styles.heroContent}>
         <h1 className={styles.heroTitle}>
-          Engineering Inteliigence <br />Where Data Meets Purpose.
+          Engineering Intelligence <br />Where Data Meets Purpose.
         </h1>
         <p className={styles.heroSubtitle}>
         Build, evaluate, and deploy world-class AI solutions with the next-generation data engine and platform.
